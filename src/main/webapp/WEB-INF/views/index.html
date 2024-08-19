@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Email List</h1>
+<a th:href="@{/create}">Tạo mới 1 email</a>
+<table>
+    <tr>
+        <th>Languages</th>
+        <th>Page size</th>
+        <th>Spams filter</th>
+        <th>Signature</th>
+    </tr>
+    <tr th:each="row: ${emails}">
+        <td th:text="${row.getLanguages()}"></td>
+        <td th:text="${row.getPageSizes()}"></td>
+        <td th:text="${row.isSpamsFilter()}"></td>
+        <td th:text="${row.getSignature()}"></td>
+</table>
+
+</body>
+</html>
